@@ -9,7 +9,7 @@ FLAGS = -m64 -g -fopenmp $(OFLAG)
 #LINKS= -L/opt/local/lib -lfftw3_threads -fftw3_omp -fftw3 #double ?
 #LINKS= -L/usr/local/lib -lfftw3l_threads -lfftw3l_omp -lfftw3l #long double mac
 #LINKS= -L/usr/local/lib -lfftw3_threads -lfftw3_omp -lfftw3 #double mac
-LINKS= -L/opt/homebrew/opt/fftw/lib -lfftw3_threads -lfftw3_omp -lfftw3 # HomebrewでインストールされたFFTWライブラリのパス
+LINKS= -L/opt/homebrew/opt/fftw/lib -lfftw3_threads -lfftw3_omp -lfftw3 # Homebrew fftw path
 #LINKS= -lfftw3l_threads -lfftw3l_omp -lfftw3l  #long double
 #LINKS= -lfftw3_threads -lfftw3_omp -lfftw3 #double
 

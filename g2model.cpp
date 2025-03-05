@@ -60,8 +60,8 @@ void modelinfo(FILE *info)
 #define CHI field[s][1]
 #define PHIDOT dfield[s][0]
 #define CHIDOT dfield[s][1]
-
 #define COUP gsq/mphi/mphi //coupling term
+#define
 
 gNum potential(int s, int i, int j, int k)//user defined potential
 {
@@ -98,7 +98,7 @@ inline gNum effMass(int s, int fld)//the effective mass used for random initial 
 			return avemass/gridsize;
 	case 1:
 			LOOP{
-				avemass += (COUP*PHI[i][j][k]*PHI[i][j][k]);
+                avemass += (COUP*PHI[i][j][k]*PHI[i][j][k])+22.*SIGCOUP*PHI[i][j][k]+3.*LAMCOUP*CHI[i][j][k]*CHI[i][j][k]);
 			}
 			return avemass/gridsize;
         default://sets mass as 1(rescaled)if there is no case structure

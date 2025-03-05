@@ -45,6 +45,8 @@ LOOP DEFINITIONS
 
 #include "g2parameters.h"
 //this is the include statement for the parameters file
+sig =5.e-10
+lambdachi = 1.e-14
 
 /******************************
  global parameters DO NOT CHANGE
@@ -86,6 +88,9 @@ Model Header
 void modelinfo(FILE *info);//function which prints model dependent information to info.txt
 
 gNum potential(int s, int i, int j, int k);// function to evaluate the potential of the field(s)
+{
+    return (0.5*PHI[i][j][k]*PHI[i][j][k]+0.5*COUP*PHI[i][j][k]*PHI[i][j][k]*CHI[i][j][k]*CHI[i][j][k]+SIGCOUP*PHI[i][j][k]*CHI[i][j][k]CHI[i][j][k]+0.25*LAMCOUP*CHI[i][j][k]*CHI[k][j][k]*CHI[i][j][k]*CHI[k][j][k]);
+}
 
 gNum dVdf(int s, int fld, int i, int j, int k);//function to store derivative wrt field of the potential
 

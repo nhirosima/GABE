@@ -44,6 +44,8 @@
 const gNum mphi=1.e-6;//mass of phi field
 const gNum phi0=0.193;//initial avg phi field value
 const gNum gsq=2.5e-7;//g^2 value for phi chi coupling
+const gNum sigma = 4.e-10;
+const gNum lambdachi=2.5e-7;
 const gNum f0[2]={phi0,0.};//array storing initial phi and chi field values
 const gNum df0[2]={-0.142231,0.};//array storing initial phi and chi field derivative values
 
