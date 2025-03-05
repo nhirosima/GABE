@@ -1,15 +1,12 @@
 COMPILER = g++-14
 #OFLAG = -O3 -I/opt/local/include #
-#OFLAG = -O3 -I/usr/local/include #mac
-OFLAG = -O3 -I/opt/homebrew/opt/fftw/include # HomebrewでインストールされたFFTWのパス
+OFLAG = -O3 -I/usr/local/include #mac
 #OFLAG = -O3
 FLAGS = -m64 -g -fopenmp $(OFLAG)
-
 #LINKS= -L/opt/local/lib -lfftw3l_threads -lfftw3l_omp -lfftw3l #long double ?
 #LINKS= -L/opt/local/lib -lfftw3_threads -fftw3_omp -fftw3 #double ?
 #LINKS= -L/usr/local/lib -lfftw3l_threads -lfftw3l_omp -lfftw3l #long double mac
-#LINKS= -L/usr/local/lib -lfftw3_threads -lfftw3_omp -lfftw3 #double mac
-LINKS= -L/opt/homebrew/opt/fftw/lib -lfftw3_threads -lfftw3_omp -lfftw3 # HomebrewでインストールされたFFTWライブラリのパス
+LINKS= -L/usr/local/lib -lfftw3_threads -lfftw3_omp -lfftw3 #double mac
 #LINKS= -lfftw3l_threads -lfftw3l_omp -lfftw3l  #long double
 #LINKS= -lfftw3_threads -lfftw3_omp -lfftw3 #double
 
@@ -44,8 +41,8 @@ g2init.o: g2header.h g2parameters.h g2init.cpp
 g2evolutionpert.o: g2header.h g2parameters.h g2evolutionpert.cpp
 	$(COMPILER) -c $(FLAGS)  g2evolutionpert.cpp
 
-oclean:
-	rm -f *.o
+oclean: 
+	rm -f *.o 
 
 fclean:
 #	rm -r gabe2_0.dSYM
@@ -53,7 +50,7 @@ fclean:
 	rm -f ./slices/*.dat
 	
 dirmake:
-	@ if test -d slices; then echo directory "'slices'" exists; else mkdir slices; echo made directory "'slices'"; fi
+	@ if test -d slices; then echo directory "'slices'" exists; else mkdir slices; echo made directory "'slices'"; fi	
 
 
 run: clean compile
